@@ -9,15 +9,28 @@
 
 
 
+//require_once("../app/lib/model/modelMODEL.php");
 
+class userModel  {
+//    public  $tablename;
+//   public  function  tablename(){
+//    echo   parent::tablename() ;//getTabelname
+//
+////return
+//   }
 
-class userModel extends  \app\lib\model\modelMODEL{
-   public  function  aa(){
-       parent::tablename();
+    public $tablenam=__CLASS__;
+    public  $rule=array();
 
-   }
-
-
+// public $tablename1=__CLASS__;
+//    public function  tablename(){
+////     echo __METHOD__;
+//        echo $this->tablenam;
+//        echo   $tablename=substr($this->tablenam,0,-5);
+////     $this->tablename1=   $tablename;
+////        return $tablename;
+//
+//    }
 }
 $u= new userModel();
-$u->aa();
+echo $u->tablename();

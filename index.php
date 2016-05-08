@@ -6,6 +6,8 @@
  * Time: 15:48
  */
 define("ROUTE","route");
+require_once("app/lib/route/route.php");
+define("Tablename",__CLASS__);
 class index {
 
 //    function  __construct()
