@@ -5,7 +5,7 @@
  * Date: 2016/5/3
  * Time: 13:29
  */
-class sharexie{
+class indexController{
     function test($b){
 
         var_dump($b);
