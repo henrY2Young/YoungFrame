@@ -22,7 +22,8 @@ for ($i = 0; $i < count($_AppPathArr); $i++) {
     }
 }
 $_UrlPath = preg_replace('/^//', '', $_UrlPath, 1);
-
+ 
+ 
 //$_AppPathArr = explode("/", $_UrlPath);
 $_AppPathArr = explode("/", $_RequestUri);
 var_dump($_AppPathArr);
