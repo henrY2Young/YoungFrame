@@ -2,8 +2,6 @@
 error_reporting(0);
 date_default_timezone_set("Asia/Shanghai");
   class route {
-
-
 public  function route(){
 $_DocumentPath = $_SERVER['DOCUMENT_ROOT'];
 $_RequestUri = $_SERVER['REQUEST_URI'];
@@ -76,7 +74,10 @@ if (file_exists($module_file)) {
 //            echo $module_name;
 
 //            var_dump($arr_url['parms']);
-            $obj_module -> $method_name($arr_url['parms']);
+            $val=count($arr_url['parms']);
+            var_dump( $arr_url['parms']);
+            die();
+            $obj_module -> $method_name($arr_url['parms'],$arr_url['parms'],$arr_url['parms'],$arr_url['parms']);
 //            $obj_module -> printResult();
 //            echo "123111";
         }

@@ -1,34 +1,43 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2016/5/4
- * Time: 15:48
+ * Date: 2016/12/19
+ * Time: 18:51
  */
-define("ROUTE","route");
-require_once("app/lib/route/route.php");
-define("Tablename",__CLASS__);
-class index {
+class  index
+{
+    protected $fileArray = array();
+    public function fileArray()
+    {
 
-
-    function  __autoload($className) {
-        $filePath =dirname(__DIR__)."\\test"."\\"."$className.php";
-
-        if (is_file($filePath)) {
-            require($filePath);
-
+        If (file_exists('app' . DIRECTORY_SEPARATOR . 'route.php')) {
+            $route = 'app' . DIRECTORY_SEPARATOR . 'route.php';
+            $fileArray['Http_File_Interface'] = $route;
+            $this->fileArray=$fileArray;
+        } else {
+            die('缺失route文件');
+        };
+        if (!is_dir('controller')) {
+            mkdir('controller', 0777);
+        }
+        if (!is_dir('model')) {
+            mkdir('model', 0777);
         }
     }
-
-function  run()
-{
-
-    $this->__autoload("route");
-
-    $route = new route();
+//    function __autoload($class_name){
+//        var_dump(111);
+//        $path = str_replace('_', '/', $class_name);
+//        require_once $path . '.php';
+//    }
+}
+function __autoload($class_name){
+    var_dump(111);
+    $path = str_replace('_', '/', $class_name);
+    echo($path . '.php');
+    require_once $path . '.php';
 
 }
-
-}
-$app=new index();
-$app->run();
+$index=new app_route() ;
+$index->route();
